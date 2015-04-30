@@ -1,0 +1,52 @@
+/*
+ Theme Name:     Weaver ii Forbes
+ Description:    A child theme of Weaver ii for Forbes Library
+ Author:         Benjamin Kalish
+ Template:       weaver-ii
+ Version:        1.0.0
+*/
+
+@import url("../weaver-ii/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+body:not(.search-results) #content .forbes_databases {
+  margin-left:64px;
+  padding-left:1em;
+  position:relative;
+}
+
+body:not(.search-results) .forbes_database_availability_icon {
+  position:absolute;
+  left:-64px;
+}
+
+body:not(.search-results) .forbes_database_feature_icon {
+  position: absolute;
+  left: -60px;
+  top: 86px;
+  width: 56px;
+  border: 1px solid;
+}
+
+.search-results #content .forbes_databases .entry-meta {
+  display:none;
+}
+
+/* FORBES FRONT PAGE BOX STYLE */
+#content .forbes_front_page_box { display: block; padding: 1em; margin: 1em; border-radius: 1em; text-align: center; color: #000; text-decoration: none; font-size: large;
+font-weight: 300; }
+
+#content .forbes_front_page_box_content:first-child { margin-top:0; }
+
+#content .forbes_front_page_box h2 { font-weight: 900; }
+
+#content a.forbes_front_page_box:hover { -webkit-filter: brightness(1.1); }
+
+#content .forbes_front_page_box h2, #content .forbes_front_page_box a { color:#000; }
+
+#content .forbes_front_page_box.white_text, #content .forbes_front_page_box.white_text h2, #content .forbes_front_page_box.white_text a { color:#fff; }
+
+#content .forbes_front_page_box.content_in_box { position: relative; text-align: left;}
+
+#content .forbes_front_page_box.content_in_box .forbes_front_page_box_content { position: absolute; bottom:0; right:0; width:50%; padding:0.5em; background-color: inherit; }
