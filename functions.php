@@ -1,5 +1,4 @@
 <?php
-require_once( dirname( __FILE__ ) . '/shortcodes/forbes_front_page_box.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_panorama.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_pdf.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_search.php' );
