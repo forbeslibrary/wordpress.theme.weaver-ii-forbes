@@ -4,14 +4,28 @@ add_filter( 'query_vars', 'forbes_search_add_query_vars_filter' );
 
 // action hooks
 add_action( 'parse_query', 'forbes_search_redirect' );
+add_action( 'init', 'forbes_search_init' );
+
+/**
+ * Sets the cookie used by this shortcode
+ */
+function forbes_search_init() {
+  $searchOpt = get_query_var( 'searchOpt', 'website' );
+  if (isset($_COOKIE['searchOpt']) ) {
+    $searchOpt = $_COOKIE['searchOpt'];
+  }
+  setcookie( 'searchOpt', $searchOpt, 0, '/' , $_SERVER['HTTP_HOST']);
+}
 
 /**
  * Displays a search widget
  *
  * @wp-hook add-shortcode forbes_search
  */
- function forbes_search_shortcode_handler( $atts, $content = null ) {
+function forbes_search_shortcode_handler( $atts, $content = null ) {
   $searchOpt = get_query_var( 'searchOpt', null );
+  $catalogSearchOpt = FALSE;
+
   if ( !$searchOpt and isset($_COOKIE['searchOpt']) ) {
     $searchOpt = $_COOKIE['searchOpt'];
   }
@@ -23,8 +37,6 @@ add_action( 'parse_query', 'forbes_search_redirect' );
     $websiteSearchOpt = TRUE;
     $action = get_home_url();
     $searchName = 's';
-
-    setcookie( 'searchOpt', 'website', 0, '/' , 'forbeslibrary.org');
   }
 
 
@@ -39,8 +51,8 @@ add_action( 'parse_query', 'forbes_search_redirect' );
     <div class="searchOptions">
       <fieldset>
         <legend class="assistive-text">What to search</legend>
-        <input id="searchOpt_website" class="inline" name="searchOpt" value="website" <?php if ($websiteSearchOpt) { echo 'checked="CHECKED"'; } ?> type="radio" tabindex="4"><label class="inline" for="searchOpt_website">Website</label>
-        <input id="searchOpt_catalog" class="inline" name="searchOpt" value="catalog" <?php if ($catalogSearchOpt) { echo 'checked="CHECKED"'; } ?> type="radio" tabindex="3"><label class="inline" for="searchOpt_catalog">Catalog</label>
+        <input id="searchOpt_website" class="inline" name="searchOpt" value="website" <?php checked($websiteSearchOpt); ?> type="radio" tabindex="4"><label class="inline" for="searchOpt_website">Website</label>
+        <input id="searchOpt_catalog" class="inline" name="searchOpt" value="catalog" <?php checked($catalogSearchOpt); ?> type="radio" tabindex="3"><label class="inline" for="searchOpt_catalog">Catalog</label>
       </fieldset>
       <input name="locg" value="247" type="hidden"/>
       <a id="searchOpt_advanced" class="moreSearch" href="http://bark.cwmars.org/eg/opac/advanced" tabindex="6">Advanced Catalog Search</a>
@@ -56,13 +68,13 @@ add_action( 'parse_query', 'forbes_search_redirect' );
         $("#search").attr("placeholder", "search catalog (books, movies, music, and more...)");
         $("#search").attr("name", "query");
         $("#searchForm").attr("action", "http://bark.cwmars.org/eg/opac/results");
-        document.cookie="searchOpt=catalog; path=/; domain=forbeslibrary.org";
+        document.cookie="searchOpt=catalog; path=/; domain=<?php echo $_SERVER['HTTP_HOST']; ?>";
     });
     $("#searchOpt_website").click( function() {
         $("#search").attr("placeholder", "search website");
         $("#search").attr("name", "s");
-        $("#searchForm").attr("action", "http://forbeslibrary.org/");
-        document.cookie="searchOpt=website; path=/; domain=forbeslibrary.org";
+        $("#searchForm").attr("action", "<?php get_home_url(); ?>");
+        document.cookie="searchOpt=website; path=/; domain=<?php echo $_SERVER['HTTP_HOST']; ?>";
     });
   }) ;
   </script>
