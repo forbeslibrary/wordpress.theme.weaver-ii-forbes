@@ -16,7 +16,7 @@ function forbes_panorama_shortcode_handler( $atts, $content = null ) {
     'size' => 'cover',
     'border' => true,
   ), $atts ) );
-  
+
   if ($href) {
     $tag = 'a';
   } else {
@@ -26,8 +26,10 @@ function forbes_panorama_shortcode_handler( $atts, $content = null ) {
   if ($title) {
     $caption = "<p class=\"wp-caption-text\">$title</p>";
     $title = "title=\"$title\"";
+  } else {
+    $caption = "";
   }
-  
+
   if ($border) {
     $border = "border: solid black 1px;";
   } else {
