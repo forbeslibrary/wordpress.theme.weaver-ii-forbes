@@ -31,7 +31,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
   }
   if ($searchOpt == 'catalog' ) {
     $catalogSearchOpt = TRUE;
-    $action = 'http://bark.cwmars.org/eg/opac/results';
+    $action = 'http://northamptn.cwmars.org/eg/opac/results';
     $searchName = 'query';
   } else {
     $websiteSearchOpt = TRUE;
@@ -54,8 +54,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
         <input id="searchOpt_website" class="inline" name="searchOpt" value="website" <?php checked($websiteSearchOpt); ?> type="radio" tabindex="4"><label class="inline" for="searchOpt_website">Website</label>
         <input id="searchOpt_catalog" class="inline" name="searchOpt" value="catalog" <?php checked($catalogSearchOpt); ?> type="radio" tabindex="3"><label class="inline" for="searchOpt_catalog">Catalog</label>
       </fieldset>
-      <input name="locg" value="247" type="hidden"/>
-      <a id="searchOpt_advanced" class="moreSearch" href="http://bark.cwmars.org/eg/opac/advanced" tabindex="6">Advanced Catalog Search</a>
+      <a id="searchOpt_advanced" class="moreSearch" href="http://northamptn.cwmars.org/eg/opac/advanced" tabindex="6">Advanced Catalog Search</a>
     </div>
   </form>
   <script>
@@ -67,7 +66,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
     $("#searchOpt_catalog").click( function() {
         $("#search").attr("placeholder", "search catalog (books, movies, music, and more...)");
         $("#search").attr("name", "query");
-        $("#searchForm").attr("action", "http://bark.cwmars.org/eg/opac/results");
+        $("#searchForm").attr("action", "http://northamptn.cwmars.org/eg/opac/results");
         document.cookie="searchOpt=catalog; path=/; domain=<?php echo $_SERVER['HTTP_HOST']; ?>";
     });
     $("#searchOpt_website").click( function() {
@@ -101,7 +100,7 @@ function forbes_search_redirect() {
     parse_str($_SERVER['QUERY_STRING'], $atts);
     $atts['query'] = $atts['s'];
     unset($atts['s']);
-    header('Location: http://bark.cwmars.org/eg/opac/results?' . http_build_query($atts));
+    header('Location: http://northamptn.cwmars.org/eg/opac/results?' . http_build_query($atts));
     exit();
   }
 }
