@@ -65,12 +65,14 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
     $("#search").attr("placeholder", "search website");
     $("#searchOpt_catalog").click( function() {
         $("#search").attr("placeholder", "search catalog (books, movies, music, and more...)");
+        $(".searchformimg").attr("alt", "search catalog");
         $("#search").attr("name", "query");
         $("#searchForm").attr("action", "http://northamptn.cwmars.org/eg/opac/results");
         document.cookie="searchOpt=catalog; path=/; domain=<?php echo $_SERVER['HTTP_HOST']; ?>";
     });
     $("#searchOpt_website").click( function() {
         $("#search").attr("placeholder", "search website");
+        $(".searchformimg").attr("alt", "search website");
         $("#search").attr("name", "s");
         $("#searchForm").attr("action", "<?php get_home_url(); ?>");
         document.cookie="searchOpt=website; path=/; domain=<?php echo $_SERVER['HTTP_HOST']; ?>";
