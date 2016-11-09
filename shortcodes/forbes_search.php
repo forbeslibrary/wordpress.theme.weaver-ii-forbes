@@ -63,6 +63,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
    */
   jQuery(document).ready( function($) {
     $("#search").attr("placeholder", "search website");
+    $(".searchformimg").attr("alt", "search website");
     $("#searchOpt_catalog").click( function() {
         $("#search").attr("placeholder", "search catalog (books, movies, music, and more...)");
         $(".searchformimg").attr("alt", "search catalog");
