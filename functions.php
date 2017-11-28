@@ -4,6 +4,15 @@ require_once( dirname( __FILE__ ) . '/shortcodes/forbes_pdf.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_search.php' );
 
 /**
+ * Exceptions for Reaaly Simple SSL mixed content filter
+ */
+function rsssl_exclude_http_url($html) {
+  $html = str_replace("https://weathersticker.wunderground.com", "http://weathersticker.wunderground.com", $html);
+  return $html;
+}
+add_filter('rsssl_fixer_output', 'rsssl_exclude_http_url');
+
+/**
  * Add shortcodes
  */
 add_shortcode( 'forbes_front_page_box', 'forbes_front_page_box_shortcode_handler' );
