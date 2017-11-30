@@ -8,6 +8,8 @@ require_once( dirname( __FILE__ ) . '/shortcodes/forbes_search.php' );
  */
 function rsssl_exclude_http_url($html) {
   $html = str_replace("https://weathersticker.wunderground.com", "http://weathersticker.wunderground.com", $html);
+  $html = str_replace("https://images.forbeslibrary.org", "http://images.forbeslibrary.org", $html);
+
   return $html;
 }
 add_filter('rsssl_fixer_output', 'rsssl_exclude_http_url');
