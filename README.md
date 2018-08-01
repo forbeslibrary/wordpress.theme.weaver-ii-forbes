@@ -7,7 +7,7 @@ A child theme for the Weaver II Wordpress theme, used by Forbes Library.
 + The default template for displaying content on blog pages. We have modified
 Weaver II's template to put page ancestry in header on search pages.
 
-### custem-editor-style.css
+### custom-editor-style.css
 + css to be used in the TinyMCE editor
 
 ### functions.php
