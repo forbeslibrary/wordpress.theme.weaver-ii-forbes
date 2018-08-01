@@ -2,6 +2,7 @@
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_panorama.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_pdf.php' );
 require_once( dirname( __FILE__ ) . '/shortcodes/forbes_search.php' );
+require_once( dirname( __FILE__ ) . '/shortcodes/forbes_todays_events.php' );
 
 /**
  * Exceptions for Reaaly Simple SSL mixed content filter
@@ -20,6 +21,8 @@ add_filter('rsssl_fixer_output', 'rsssl_exclude_http_url');
 add_shortcode( 'forbes_panorama', 'forbes_panorama_shortcode_handler' );
 add_shortcode( 'forbes_pdf', 'forbes_pdf_shortcode_handler' );
 add_shortcode( 'forbes_search', 'forbes_search_shortcode_handler' );
+add_shortcode( 'forbes_todays_events', 'forbes_todays_events_shortcode_handler' );
+
 
 /**
  * Modify buttons for the TinyMCE editor
