@@ -26,3 +26,4 @@ Forbes Library can be found in forbeslibrary/wordpress.theme.weaver-ii.forbes-cu
   + `forbes_panorama`: for embedding images with a fixed height but variable width
   + `forbes_pdf`: for embedding pdf files.
   + `forbes_search`: outputs a search form
+  + `forbes_todays_events`: outputs a simple list of todays events (from libcal)
