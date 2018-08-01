@@ -17,7 +17,6 @@ add_filter('rsssl_fixer_output', 'rsssl_exclude_http_url');
 /**
  * Add shortcodes
  */
-add_shortcode( 'forbes_front_page_box', 'forbes_front_page_box_shortcode_handler' );
 add_shortcode( 'forbes_panorama', 'forbes_panorama_shortcode_handler' );
 add_shortcode( 'forbes_pdf', 'forbes_pdf_shortcode_handler' );
 add_shortcode( 'forbes_search', 'forbes_search_shortcode_handler' );
