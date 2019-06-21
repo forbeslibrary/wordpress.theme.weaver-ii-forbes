@@ -9,6 +9,7 @@ require_once( dirname( __FILE__ ) . '/shortcodes/forbes_todays_events.php' );
  */
 function rsssl_exclude_http_url($html) {
   $html = str_replace("https://weathersticker.wunderground.com", "http://weathersticker.wunderground.com", $html);
+  $html = str_replace("https://banners.wunderground.com", "http://banners.wunderground.com", $html);
   $html = str_replace("https://images.forbeslibrary.org", "http://images.forbeslibrary.org", $html);
 
   return $html;
