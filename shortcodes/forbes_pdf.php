@@ -12,7 +12,7 @@ function forbes_pdf_shortcode_handler( $atts, $content = null ) {
   ), $atts ) );
   
   ob_start(); 
-  echo "<object data=\"$src\" type=\"application/pdf\" width=\"$width\" height=\"$height\">";?>
+  echo "<object data=\"$src\" type=\"application/pdf\" style=\"width=:$width; height:$height;\">";?>
   <p>It appears you don't have a PDF plugin for this browser.
   You can <a href="<?php echo $src; ?>">
   download the PDF file.</a></p>  
