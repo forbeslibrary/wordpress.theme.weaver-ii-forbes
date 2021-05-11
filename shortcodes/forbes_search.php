@@ -54,7 +54,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
         <input id="searchOpt_website" class="inline" name="searchOpt" value="website" <?php checked($websiteSearchOpt); ?> type="radio" tabindex="4"><label class="inline" for="searchOpt_website">Website</label>
         <input id="searchOpt_catalog" class="inline" name="searchOpt" value="catalog" <?php checked($catalogSearchOpt); ?> type="radio" tabindex="3"><label class="inline" for="searchOpt_catalog">Catalog</label>
       </fieldset>
-      <a id="searchOpt_advanced" class="moreSearch" href="https://northamptn.cwmars.org/eg/opac/advanced" tabindex="6">Advanced Catalog Search</a>
+      <a id="searchOpt_advanced" class="moreSearch" href="https://northamptn.cwmars.org/eg/opac/advanced?locg=1" tabindex="6">Advanced Catalog Search</a>
     </div>
   </form>
   <script>
