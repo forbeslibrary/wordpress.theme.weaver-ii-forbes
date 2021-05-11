@@ -43,6 +43,7 @@ function forbes_search_shortcode_handler( $atts, $content = null ) {
   ob_start();
   ?>
   <form role="search" id="searchForm" method="get" class="searchform" action="<?php echo $action?>">
+    <input type="hidden" name="locg" value="1" />
     <div class="searchMain">
       <label id="searchLabel" class="screen-reader-text" for="search">Search for:</label>
       <input type="search" value="" name="<?php echo $searchName;?>" id="search" tabindex="2">
